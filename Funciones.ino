@@ -11,7 +11,7 @@ void avanzar(int velocidad){             //Funcion para avanzar con ambos motore
     digitalWrite(IN4, 1);
 }
 
-void retroceder(int velocidad){
+void retroceder(int velocidad){         //Funcion para retroceso con ambos motores
     analogWrite(ENA, velocidad);
     analogWrite(ENB, velocidad);
     digitalWrite(IN1, 1);
@@ -48,12 +48,12 @@ void girarDerecha(int velocidad){        //Funcion para girar a la derecha
 int CalcularDistancia() {   //Funcion para calcular la distancia. La variable distancia es global (ver como cambiar eso para que devuelva el valor)
   int distancia;
   int duracionEco;
-  digitalWrite(SR04Trig, LOW);          // Envia señal a Trigger del ultrasonido
-  delayMicroseconds(2);   
-  digitalWrite(SR04Trig, HIGH);          // Envia señal a Trigger del ultrasonido
-  delayMicroseconds(10);                             // Espera 1 milisegundo
-  digitalWrite(SR04Trig, LOW);           // Apaga el trigger (deja de emitir señal)
-  duracionEco = pulseIn(SR04Eco, HIGH);  // captura la duración del eco
-  distancia = (float (duracionEco)) / 58.2;       // divide para converir en centimetros
+  digitalWrite(SR04Trig, LOW);                  // Envia señal LOW a Trigger del ultrasonido
+  delayMicroseconds(2);                         // Espera 2 milisegundo
+  digitalWrite(SR04Trig, HIGH);                 // Envia señal HIGH a Trigger del ultrasonido
+  delayMicroseconds(10);                        // Espera 10 milisegundo
+  digitalWrite(SR04Trig, LOW);                  // Apaga el trigger (deja de emitir señal)
+  duracionEco = pulseIn(SR04Eco, HIGH);         // Captura la duración del eco
+  distancia = (float (duracionEco)) / 58.2;     // Convierte el tiempo en centimetros
   return distancia;
 }

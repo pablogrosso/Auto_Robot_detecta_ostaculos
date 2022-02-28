@@ -1,4 +1,5 @@
 /*Pinout de los motores y sentidos de giro
+ * ver Excel tambien.
 
 Motor Izq    IN1 IN2    Motor Der  IN3 IN4
 Detenido      0   0       Detenido  0   0

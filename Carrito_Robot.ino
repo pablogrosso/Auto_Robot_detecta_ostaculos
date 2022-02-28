@@ -1,7 +1,6 @@
 #include <Servo.h>
-//#include <MotorDriver.h>
 
-Servo myservo;  // create servo object to control a servo
+Servo myservo;  // Creo el objeto para el servo
 
 //int volatile velocidad;
 int IN1 = 7;                  //Motor 1 retroceso
@@ -20,8 +19,6 @@ int distObstMin = 2;          // Defino la distancia minima para el cambio de se
 int velocidadGiro = 110;
 int velocidadAvance = 220;
 int tiempoDeGiro = 300;       //Milisegundos
-//char giro = 'R';
-//int pos = 90;                 // Variable para guardar la posicion del servo (grados)
 
 void setup() {
 
